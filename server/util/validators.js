@@ -26,3 +26,18 @@ module.exports.validateRegisterInput = (
     valid: Object.keys(errors).length < 1
   };
 }
+
+module.exports.validateLoginInput = (email, password) => {
+  const errors = {};
+  if (!email) {
+    errors.email = 'Email is required';
+  }
+  if (!password) {
+    errors.password = 'Password is required';
+  }
+
+  return {
+    errors,
+    valid: Object.keys(errors).length < 1
+  };
+}
